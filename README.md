@@ -1,26 +1,63 @@
-# User Guide for Accessing and Inputting Data for Paleo Crustal Thickness Prediction
-# Geochemical data modelling towards predicting crustal thickness
+#User Guide for Paleo Crustal Thickness Prediction and Analysis Scripts
 
-Accessing Training Files and Inputting Your Data
-This guide provides instructions on where to find the necessary training files for the paleo crustal thickness prediction script and how to input your own data for analysis.
+#1. Introduction
+This guide covers two primary scripts:
 
-Training Files
-The training files required for the paleo crustal thickness prediction script are provided within the project repository. These files contain preprocessed geological data that has been curated and formatted to train the machine learning models effectively.
+	Paleo Crustal Thickness Prediction: A script for predicting crustal thickness using machine learning.
+	
+	Spatial and Temporal Evolution Analysis: A script for visualizing the evolution of crustal thickness across time and geography.
+#2. Prerequisites
+Python 3.7 or higher
+Required Libraries:
+pandas
+numpy
+catboost
+matplotlib
 
-#Location of Training Files:
+#3. Installation
+Before running the scripts, ensure all required Python packages are installed:
+pip install pandas numpy catboost matplotlib
 
-The training files can be found in the data/Models for machine learning data training/ directory within the project repository.
+#4. Script 1: Paleo Crustal Thickness Prediction
 
-The main training dataset is named Model 1.csv and includes various geological parameters necessary for the model training process. 
+Step 1: Data Preparation
+Load your dataset, ensuring it has the expected structure (features in columns, target as Crustal_Thickness).
+The script checks for missing values and notifies you of any issues.
 
-#Inputting Your Own Data
-To utilize the script for calculating paleo crustal thickness with your own data, follow these steps:
+Step 2: Model Training
+The script uses CatBoost to train a model on your data.
+Ensure that the input data aligns with the specified features.
 
-Format Your Data: Ensure your data is formatted similarly to the provided training files. The dataset should include columns for each geological parameter used in the prediction model. Detailed instruction can be in the script.
+Step 3: Model Prediction
+After training, you can use the model to make predictions on new data.
 
-Data Input Directory: Place your data file in the data/input/ directory within the project repository. Ensure your data file is in CSV format and named appropriately, such as Model 1.csv. Ages and age errors of each sample can be added when you have received your output file.
+#5. Script 2: Spatial and Temporal Evolution Analysis
 
-Script Configuration: Modify the script configuration to point to your input data file. Locate the section of the script where the data file path is specified and update it to reflect the location of your input file. 
+Step 1: Data Visualization
+Load your crustal thickness data, which includes coordinates (latitude, longitude) and time (age).
+The script creates scatter plots to visualize how crustal thickness varies over time and space.
 
-For any further assistance or queries regarding data input or script usage, please refer to the detailed documentation within the script or contact the script's author.
+Step 2: Plot Customization
+The script allows for extensive customization of plots, including setting axis limits, labels, and titles.
+It also generates color bars to represent median crustal thickness and annotates the plots with the number of samples.
 
+Step 3: Save Figures
+Plots are saved as high-resolution PDFs, suitable for publication.
+
+#6. Example Commands
+
+# Example for training the model
+from catboost import CatBoostRegressor
+model = CatBoostRegressor()
+model.fit(x, y)
+
+# Example for creating and saving a plot
+import matplotlib.pyplot as plt
+plt.scatter(df['Age'], df['Lat'], c=df['Median_Crustal_Thickness'], cmap='viridis')
+plt.savefig('crustal_thickness_plot.pdf', format='pdf', dpi=300)
+
+7. Troubleshooting
+Ensure datasets are free from NaN values or handle them appropriately.
+Verify the data structure matches the expected format in the scripts.
+8. Contact Information
+For further assistance, please contact [jianping.geo@outlook.com].
