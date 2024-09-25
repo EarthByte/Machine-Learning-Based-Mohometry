@@ -1,0 +1,7 @@
+source("/Users/jianpingzhou/work/Doc/Papers/The_next/Modeling/Pecube/NA.R")
+source("/Users/jianpingzhou/work/Doc/Papers/The_next/Modeling/Pecube/tools/NA.R")
+2
+source("/Users/jianpingzhou/work/Doc/Papers/The_next/Modeling/Pecube/tools/NA.R")
+source("/Users/jianpingzhou/Downloads/GCDkit_6.2.0_for_R_4.1.3/GCDkit_6.2.0.zip")
+source("/Users/jianpingzhou/Downloads/GCDkit_6.2.0_for_R_4.1.3/@INSTALL.r")
+~/Downloads/GCDkit_6.2.0_for_R_4.1.3/GCDkit 6.2.0 in R 4.1.3.lnk
