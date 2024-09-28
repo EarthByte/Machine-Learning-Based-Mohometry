@@ -24,19 +24,20 @@ This repository contains two Jupyter notebooks designed to work with Paleo crust
 To successfully run these notebooks, you need to have Python 3.7 or above installed on your system.
 
 Required Python Packages
-
 <ul>
 <li>Python 3.7+
 <li>Jupyter Notebook (for running the notebooks interactively)
-</li>
-  
+</li> 
+</ul>
 Required Python libraries:
+<ul>
 <li>pandas
 <li>numpy
 <li>matplotlib
 <li>catboost (for Paleo_Crustal_Thickness-prediction.ipynb)
 <li>scikit-learn (for additional model evaluation if needed)
   </li>
+</ul>
 To install these dependencies, you can create a virtual environment and install the required packages using the following commands:
 
 bash
