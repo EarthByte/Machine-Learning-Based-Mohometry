@@ -43,19 +43,30 @@ Required Python libraries:
 <ul>
   <li>python -m venv crustal_env
 source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate</li>
+</ul>
 
-# Install required packages
-pip install pandas numpy matplotlib catboost scikit-learn jupyter
-If you don't have Jupyter installed globally, you can install it within the environment and launch it with:
+#### Install required packages
+<ul>
+ <li>pip install pandas numpy matplotlib catboost scikit-learn jupyter</li>
+</ul>
 
-pip install jupyter
-jupyter notebook
-Additional Data Requirements
-The notebooks require datasets in CSV format. Ensure that your data includes the relevant columns, such as geochemical elements and crustal thickness measurements.
-Repository Contents
-##Paleo_Crustal_Thickness-prediction.ipynb: 
+#### If you don't have Jupyter installed globally, you can install it within the environment and launch it with:
 
-This notebook builds a machine learning model (CatBoost) to predict Paleo crustal thickness using geochemical element data.
+<ul>
+  <li>pip install jupyter</li>
+  <li>jupyter notebook</li>
+</ul>
+
+### Additional Data Requirements
+<ul>
+  <li>The notebooks require datasets in CSV format. Ensure that your data includes the relevant columns, such as geochemical elements and crustal thickness measurements.</li>
+</ul>
+
+## Repository Contents
+<ol>
+<li>Paleo_Crustal_Thickness-prediction.ipynb: </li>
+</ol>
+<p>This notebook builds a machine learning model (CatBoost) to predict Paleo crustal thickness using geochemical element data.</p>
 
 ##Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb: 
 
