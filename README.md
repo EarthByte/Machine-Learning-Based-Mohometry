@@ -96,69 +96,53 @@ Once the model is trained, it can be used to predict crustal thickness for new o
 ### 2. Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb
 <p>This notebook focuses on visualizing the spatial and temporal evolution of the paleo-crustal thickness. It generates scatter plots showing the relationship between geographic coordinates (latitude and longitude), geologic age, and median crustal thickness.</p>
 
-#### Steps to Use:
+Steps to Use:
 #### Prepare the Dataset: 
 <p>Ensure that your dataset includes columns for Age, Longitude, Latitude, and Median_Crustal_Thickness.</p>
 
-Example CSV Columns:
+##### Example CSV Columns:
 
-Age, Longitude, Latitude, Median_Crustal_Thickness
-Edit File Path: Update the file path in the notebook to point to your dataset.
+Predicted_Crustal_Thickness, Age, Age error, Lat, Lon
 
-python
-Copy code
-dataFile = '/path/to/your/dataset.csv'
-Run the Notebook: The notebook will:
+#### Edit File Path: 
+Update the file path in the notebook to point to your dataset. dataFile = '/path/to/your/dataset.csv'
 
-Plot scatter plots that show the correlation between age, geographic coordinates (latitude/longitude), and crustal thickness.
-Customize the appearance of the plots with color bars and sample annotations.
-Customize Plots: You can adjust the axes limits, color schemes, and minor tick locators depending on your preferences.
+#### Run the Notebook: 
+The notebook will:
+<ul>
+  
+</ul>
+<li>Plot scatter plots that show the correlation between age, geographic coordinates (latitude/longitude), and crustal thickness.</li>
+<li>Customize the appearance of the plots with color bars and sample annotations.</li>
+</ul>
 
-Save the Output: The script saves the resulting plots as a PDF. Make sure to specify your desired file path in the code where the PDF will be saved.
+#### Customize Plots: 
+You can adjust the axes limits, color schemes, and minor tick locators depending on your preferences.
+#### Save the Output: 
+The script saves the resulting plots as a PDF. Make sure to specify your desired file path in the code where the PDF will be saved.
 
-Usage Notes
-Running the Notebooks
+### Usage Notes
+#### Running the Notebooks
 To run the notebooks:
+<ol>
+<li>Clone this repository or download the notebooks.</li>
+<li>Navigate to the directory where the notebooks are stored.</li>
+<li>Launch Jupyter Notebook: </li>
+<li>Open either the Paleo_Crustal_Thickness-prediction.ipynb or Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb notebook and run the cells in order.</li>
+</ol>
 
-Clone this repository or download the notebooks.
+### Output Files
+<ol>
+<li>Paleo_Crustal_Thickness-prediction.ipynb: The output is a machine learning model trained to predict crustal thickness based on geochemical data. You can use this model to make predictions on new data.</li>
+<li>Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb: The output is a PDF file containing the scatter plots visualizing the spatial-temporal correlation of crustal thickness.</li>
+</ol>
 
-Navigate to the directory where the notebooks are stored.
+### File Paths
+Ensure that you update the file paths for your datasets and output files as needed in each notebook. 
 
-Launch Jupyter Notebook:
-
-bash
-Copy code
-jupyter notebook
-Open either the Paleo_Crustal_Thickness-prediction.ipynb or Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb notebook and run the cells in order.
-
-Output Files
-Paleo_Crustal_Thickness-prediction.ipynb: The output is a machine learning model trained to predict crustal thickness based on geochemical data. You can use this model to make predictions on new data.
-Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb: The output is a PDF file containing the scatter plots visualizing the spatial-temporal correlation of crustal thickness.
-File Paths
-Ensure that you update the file paths for your datasets and output files as needed in each notebook. For example:
-
-python
-Copy code
-dataFile = '/path/to/your/dataset.csv'
-python
-Copy code
-plt.savefig('/path/to/output/figure.pdf', format='pdf', dpi=300, bbox_inches='tight')
-Example Data Format
-Your CSV files should be formatted similarly to the examples below:
-
-For Machine Learning (Prediction):
-plaintext
-Copy code
-SiO2, TiO2, Al2O3, FeOt, MnO, MgO, CaO, Na2O, K2O, Crustal_Thickness
-52.1, 0.72, 14.35, 9.6, 0.12, 7.35, 10.8, 3.1, 1.2, 40
-...
-For Visualization (Spatial-Temporal Evolution):
-plaintext
-Copy code
-Age, Longitude, Latitude, Median_Crustal_Thickness
-250, 100.5, -50.1, 35
-...
-Troubleshooting
-Ensure that your data is correctly formatted and that there are no missing values in critical columns.
-Check that the Python environment has the correct versions of the required libraries installed.
-If you encounter memory issues while processing large datasets, consider running the notebooks on a machine with more RAM or splitting the dataset into smaller chunks.
+## Troubleshooting
+<ul>
+<li>Ensure that your data is correctly formatted and that there are no missing values in critical columns.</li>
+<li>Check that the Python environment has the correct versions of the required libraries installed.</li>
+<li>If you encounter memory issues while processing large datasets, consider running the notebooks on a machine with more RAM or splitting the dataset into smaller chunks.</li>
+</ul>
