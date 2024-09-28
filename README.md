@@ -67,44 +67,42 @@ source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate<
 <li>Paleo_Crustal_Thickness-prediction.ipynb: </li>
 <p>This notebook builds a machine learning model (CatBoost) to predict Paleo crustal thickness using geochemical element data.</p>
 <li>Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb:</li> 
-</ol>
 <p>This notebook visualizes the spatial and temporal correlation between geologic age, crustal thickness, latitude, and longitude using scatter plots.</p>
+</ol>
 
-Instructions
-1. Paleo_Crustal_Thickness-prediction.ipynb
-This notebook is designed to predict Paleo crustal thickness from geochemical measurements using a machine learning approach. Follow the steps below to run the notebook successfully:
+## Instructions
+### 1. Paleo_Crustal_Thickness-prediction.ipynb
+    <p>This notebook is designed to predict Paleo crustal thickness from geochemical measurements using a machine learning approach. Follow the steps below to run the notebook successfully:</p>
+</ol>
 
-Prepare the Dataset: Ensure you have a CSV file with whole rock geochemical data for model training. The dataset should include various geochemical elements (such as SiO₂, TiO₂, Al₂O₃, etc.) as input features and a column labeled Crustal_Thickness for the target variable.
+#### Prepare the Dataset: 
+<p>Ensure you have a CSV file with whole-rock geochemical data for paleo-crustal thickness estimation. The dataset should include various major and trace elements (such as SiO₂, TiO₂, Al₂O₃, etc.) with proper order (see Model 1 dataset) as input features and a column labeled Crustal_Thickness for the target variable. If you have only limited geochemical elements, ensuring at least Sr/Y, (La/Yb)n, Rb/Sr, Lu/Hf, Nd/Y, Th/Yb, Ba/V, A/CaO, Cr/Sc, Cr/V, MgO, CaO, K2O, P2O5, Al2O3, MnO, Ho, Lu, Sr, Y, Rb, Ba, Nb, Pb, Sc, V, Ni, A, Nb/Yb, Zr/Y, La/Sm, Dy/Yb, and Sm/Yb are prepared for the LASSO-CV-based estimation model.</p>
+
+#### Edit File Path: 
+<p>In the notebook, update the dataFile path to point to your dataset. Example: dataFile = '/path/to/your/dataset.csv'</p>
+  
+#### Run the Notebook: The notebook will:
+<ul>
+  <li>Load the dataset and check for missing values (NaN).</li>
+  <li>Extract features (geochemical elements) and the target (crustal thickness).</li>
+  <li>Train a CatBoost model to predict crustal thickness based on the geochemical inputs.</li>
+</ul>
+
+#### Optional: 
+You can modify the machine learning workflow, such as performing hyperparameter tuning or cross-validation to optimize the model further.
+
+#### Results: 
+Once the model is trained, it can be used to predict crustal thickness for new or unseen geochemical data. You can save the trained model and use it in future predictions.
+
+### 2. Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb
+<p>This notebook focuses on visualizing the spatial and temporal evolution of the paleo-crustal thickness. It generates scatter plots showing the relationship between geographic coordinates (latitude and longitude), geologic age, and median crustal thickness.</p>
+
+#### Steps to Use:
+#### Prepare the Dataset: 
+<p>Ensure that your dataset includes columns for Age, Longitude, Latitude, and Median_Crustal_Thickness.</p>
 
 Example CSV Columns:
 
-plaintext
-Copy code
-SiO2, TiO2, Al2O3, FeOt, MnO, MgO, CaO, Na2O, K2O, Crustal_Thickness
-Edit File Path: In the notebook, update the dataFile path to point to your dataset. Example:
-
-python
-Copy code
-dataFile = '/path/to/your/dataset.csv'
-Run the Notebook: The notebook will:
-
-Load the dataset and check for missing values (NaN).
-Extract features (geochemical elements) and the target (crustal thickness).
-Train a CatBoost model to predict crustal thickness based on the geochemical inputs.
-Optional: You can modify the machine learning workflow, such as performing hyperparameter tuning or cross-validation to optimize the model further.
-
-Results: Once the model is trained, it can be used to predict crustal thickness for new or unseen geochemical data. You can save the trained model and use it in future predictions.
-
-2. Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb
-This notebook focuses on visualizing the spatial and temporal evolution of crustal thickness. It generates scatter plots showing the relationship between geographic coordinates (latitude and longitude), geologic age, and median crustal thickness.
-
-Steps to Use:
-Prepare the Dataset: Ensure that your dataset includes columns for Age, Longitude, Latitude, and Median_Crustal_Thickness.
-
-Example CSV Columns:
-
-plaintext
-Copy code
 Age, Longitude, Latitude, Median_Crustal_Thickness
 Edit File Path: Update the file path in the notebook to point to your dataset.
 
