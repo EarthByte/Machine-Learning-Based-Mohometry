@@ -1,63 +1,138 @@
-#User Guide for Paleo Crustal Thickness Prediction and Analysis Scripts
+# Paleo Crustal Thickness Estimation and Evolution Visualization
 
-#1. Introduction
-This guide covers two primary scripts:
+This repository contains two Jupyter notebooks designed to work with Paleo crustal thickness data. One script focuses on machine learning-based predictions of crustal thickness, and the other focuses on visualizing its spatial and temporal evolution.
 
-	Paleo Crustal Thickness Prediction: A script for predicting crustal thickness using machine learning.
-	
-	Spatial and Temporal Evolution Analysis: A script for visualizing the evolution of crustal thickness across time and geography.
-#2. Prerequisites
-Python 3.7 or higher
-Required Libraries:
+#Requirements
+To successfully run these notebooks, you need to have Python 3.7 or above installed on your system.
+
+Required Python Packages
+Python 3.7+
+Jupyter Notebook (for running the notebooks interactively)
+Required Python libraries:
 pandas
 numpy
-catboost
 matplotlib
+catboost (for Paleo_Crustal_Thickness-prediction.ipynb)
+scikit-learn (for additional model evaluation if needed)
+To install these dependencies, you can create a virtual environment and install the required packages using the following commands:
 
-#3. Installation
-Before running the scripts, ensure all required Python packages are installed:
-pip install pandas numpy catboost matplotlib
+bash
+Copy code
+# Create a virtual environment (optional but recommended)
+python -m venv crustal_env
+source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate
 
-#4. Script 1: Paleo Crustal Thickness Prediction
+# Install required packages
+pip install pandas numpy matplotlib catboost scikit-learn jupyter
+If you don't have Jupyter installed globally, you can install it within the environment and launch it with:
 
-Step 1: Data Preparation
-Load your dataset, ensuring it has the expected structure (features in columns, target as Crustal_Thickness).
-The script checks for missing values and notifies you of any issues.
+bash
+Copy code
+pip install jupyter
+jupyter notebook
+Additional Data Requirements
+The notebooks require datasets in CSV format. Ensure that your data includes the relevant columns, such as geochemical elements and crustal thickness measurements.
+Repository Contents
+##Paleo_Crustal_Thickness-prediction.ipynb: 
 
-Step 2: Model Training
-The script uses CatBoost to train a model on your data.
-Ensure that the input data aligns with the specified features.
+This notebook builds a machine learning model (CatBoost) to predict Paleo crustal thickness using geochemical element data.
 
-Step 3: Model Prediction
-After training, you can use the model to make predictions on new data.
+##Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb: 
 
-#5. Script 2: Spatial and Temporal Evolution Analysis
+This notebook visualizes the spatial and temporal correlation between geologic age, crustal thickness, latitude, and longitude using scatter plots.
 
-Step 1: Data Visualization
-Load your crustal thickness data, which includes coordinates (latitude, longitude) and time (age).
-The script creates scatter plots to visualize how crustal thickness varies over time and space.
+Instructions
+1. Paleo_Crustal_Thickness-prediction.ipynb
+This notebook is designed to predict Paleo crustal thickness from geochemical measurements using a machine learning approach. Follow the steps below to run the notebook successfully:
 
-Step 2: Plot Customization
-The script allows for extensive customization of plots, including setting axis limits, labels, and titles.
-It also generates color bars to represent median crustal thickness and annotates the plots with the number of samples.
+Prepare the Dataset: Ensure you have a CSV file with whole rock geochemical data for model training. The dataset should include various geochemical elements (such as SiO₂, TiO₂, Al₂O₃, etc.) as input features and a column labeled Crustal_Thickness for the target variable.
 
-Step 3: Save Figures
-Plots are saved as high-resolution PDFs, suitable for publication.
+Example CSV Columns:
 
-#6. Example Commands
+plaintext
+Copy code
+SiO2, TiO2, Al2O3, FeOt, MnO, MgO, CaO, Na2O, K2O, Crustal_Thickness
+Edit File Path: In the notebook, update the dataFile path to point to your dataset. Example:
 
-# Example for training the model
-from catboost import CatBoostRegressor
-model = CatBoostRegressor()
-model.fit(x, y)
+python
+Copy code
+dataFile = '/path/to/your/dataset.csv'
+Run the Notebook: The notebook will:
 
-# Example for creating and saving a plot
-import matplotlib.pyplot as plt
-plt.scatter(df['Age'], df['Lat'], c=df['Median_Crustal_Thickness'], cmap='viridis')
-plt.savefig('crustal_thickness_plot.pdf', format='pdf', dpi=300)
+Load the dataset and check for missing values (NaN).
+Extract features (geochemical elements) and the target (crustal thickness).
+Train a CatBoost model to predict crustal thickness based on the geochemical inputs.
+Optional: You can modify the machine learning workflow, such as performing hyperparameter tuning or cross-validation to optimize the model further.
 
-7. Troubleshooting
-Ensure datasets are free from NaN values or handle them appropriately.
-Verify the data structure matches the expected format in the scripts.
-8. Contact Information
-For further assistance, please contact [jianping.geo@outlook.com].
+Results: Once the model is trained, it can be used to predict crustal thickness for new or unseen geochemical data. You can save the trained model and use it in future predictions.
+
+2. Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb
+This notebook focuses on visualizing the spatial and temporal evolution of crustal thickness. It generates scatter plots showing the relationship between geographic coordinates (latitude and longitude), geologic age, and median crustal thickness.
+
+Steps to Use:
+Prepare the Dataset: Ensure that your dataset includes columns for Age, Longitude, Latitude, and Median_Crustal_Thickness.
+
+Example CSV Columns:
+
+plaintext
+Copy code
+Age, Longitude, Latitude, Median_Crustal_Thickness
+Edit File Path: Update the file path in the notebook to point to your dataset.
+
+python
+Copy code
+dataFile = '/path/to/your/dataset.csv'
+Run the Notebook: The notebook will:
+
+Plot scatter plots that show the correlation between age, geographic coordinates (latitude/longitude), and crustal thickness.
+Customize the appearance of the plots with color bars and sample annotations.
+Customize Plots: You can adjust the axes limits, color schemes, and minor tick locators depending on your preferences.
+
+Save the Output: The script saves the resulting plots as a PDF. Make sure to specify your desired file path in the code where the PDF will be saved.
+
+Usage Notes
+Running the Notebooks
+To run the notebooks:
+
+Clone this repository or download the notebooks.
+
+Navigate to the directory where the notebooks are stored.
+
+Launch Jupyter Notebook:
+
+bash
+Copy code
+jupyter notebook
+Open either the Paleo_Crustal_Thickness-prediction.ipynb or Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb notebook and run the cells in order.
+
+Output Files
+Paleo_Crustal_Thickness-prediction.ipynb: The output is a machine learning model trained to predict crustal thickness based on geochemical data. You can use this model to make predictions on new data.
+Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb: The output is a PDF file containing the scatter plots visualizing the spatial-temporal correlation of crustal thickness.
+File Paths
+Ensure that you update the file paths for your datasets and output files as needed in each notebook. For example:
+
+python
+Copy code
+dataFile = '/path/to/your/dataset.csv'
+python
+Copy code
+plt.savefig('/path/to/output/figure.pdf', format='pdf', dpi=300, bbox_inches='tight')
+Example Data Format
+Your CSV files should be formatted similarly to the examples below:
+
+For Machine Learning (Prediction):
+plaintext
+Copy code
+SiO2, TiO2, Al2O3, FeOt, MnO, MgO, CaO, Na2O, K2O, Crustal_Thickness
+52.1, 0.72, 14.35, 9.6, 0.12, 7.35, 10.8, 3.1, 1.2, 40
+...
+For Visualization (Spatial-Temporal Evolution):
+plaintext
+Copy code
+Age, Longitude, Latitude, Median_Crustal_Thickness
+250, 100.5, -50.1, 35
+...
+Troubleshooting
+Ensure that your data is correctly formatted and that there are no missing values in critical columns.
+Check that the Python environment has the correct versions of the required libraries installed.
+If you encounter memory issues while processing large datasets, consider running the notebooks on a machine with more RAM or splitting the dataset into smaller chunks.
