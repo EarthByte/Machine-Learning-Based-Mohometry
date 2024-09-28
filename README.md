@@ -9,7 +9,9 @@ This repository contains two Jupyter notebooks designed to work with Paleo crust
 <li>Usage
 <ul>
 <li>
-<P>Paleo_Crustal_Thickness-prediction.ipynb
+  <blockquote>
+<P>Paleo_Crustal_Thickness-prediction.ipynb</P>
+    <blockquote>
 <P>Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb</P>
 </li>
 </ul>
