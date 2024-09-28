@@ -36,11 +36,11 @@ Required Python libraries:
 <li>scikit-learn (for additional model evaluation if needed)
   </li>
 </ul>
-To install these dependencies, you can create a virtual environment and install the required packages using the following commands:
-
-pip install pandas numpy matplotlib catboost scikit-learn
-
-## Create a virtual environment (optional but recommended)
+### To install these dependencies, you can create a virtual environment and install the required packages using the following commands:
+<ul>
+  <li>pip install pandas numpy matplotlib catboost scikit-learn</li>
+</ul>
+#### Create a virtual environment (optional but recommended)
 python -m venv crustal_env
 source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate
 
