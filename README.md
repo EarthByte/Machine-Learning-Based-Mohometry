@@ -72,8 +72,7 @@ source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate<
 
 ## Instructions
 ### 1. Paleo_Crustal_Thickness-prediction.ipynb
-    <p>This notebook is designed to predict Paleo crustal thickness from geochemical measurements using a machine learning approach. Follow the steps below to run the notebook successfully:</p>
-</ol>
+This notebook is designed to predict Paleo crustal thickness from geochemical measurements using a machine learning approach. Follow the steps below to run the notebook successfully:
 
 #### Prepare the Dataset: 
 <p>Ensure you have a CSV file with whole-rock geochemical data for paleo-crustal thickness estimation. The dataset should include various major and trace elements (such as SiO₂, TiO₂, Al₂O₃, etc.) with proper order (see Model 1 dataset) as input features and a column labeled Crustal_Thickness for the target variable. If you have only limited geochemical elements, ensuring at least Sr/Y, (La/Yb)n, Rb/Sr, Lu/Hf, Nd/Y, Th/Yb, Ba/V, A/CaO, Cr/Sc, Cr/V, MgO, CaO, K2O, P2O5, Al2O3, MnO, Ho, Lu, Sr, Y, Rb, Ba, Nb, Pb, Sc, V, Ni, A, Nb/Yb, Zr/Y, La/Sm, Dy/Yb, and Sm/Yb are prepared for the LASSO-CV-based estimation model.</p>
