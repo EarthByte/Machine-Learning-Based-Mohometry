@@ -38,9 +38,9 @@ Required Python libraries:
 </ul>
 To install these dependencies, you can create a virtual environment and install the required packages using the following commands:
 
-bash
-Copy code
-# Create a virtual environment (optional but recommended)
+pip install pandas numpy matplotlib catboost scikit-learn
+
+## Create a virtual environment (optional but recommended)
 python -m venv crustal_env
 source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate
 
@@ -48,8 +48,6 @@ source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate
 pip install pandas numpy matplotlib catboost scikit-learn jupyter
 If you don't have Jupyter installed globally, you can install it within the environment and launch it with:
 
-bash
-Copy code
 pip install jupyter
 jupyter notebook
 Additional Data Requirements
