@@ -65,9 +65,7 @@ source crustal_env/bin/activate  # On Windows, use crustal_env\Scripts\activate<
 ## Repository Contents
 <ol>
 <li>Paleo_Crustal_Thickness-prediction.ipynb: </li>
-</ol>
 <p>This notebook builds a machine learning model (CatBoost) to predict Paleo crustal thickness using geochemical element data.</p>
-<ol>
 <li>Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb:</li> 
 </ol>
 <p>This notebook visualizes the spatial and temporal correlation between geologic age, crustal thickness, latitude, and longitude using scatter plots.</p>
