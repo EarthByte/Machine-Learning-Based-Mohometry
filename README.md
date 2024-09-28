@@ -10,10 +10,11 @@ This repository contains two Jupyter notebooks designed to work with Paleo crust
 <blockquote>
   <P>Paleo_Crustal_Thickness-prediction.ipynb</P>
   <P>Spatial_Temporal evolution of the Paleo Crustal Thickness.ipynb</P>
-<P>Data Requirements
-<P>Output Files
-<P>Troubleshooting
-<P>License
+<li>Data Requirements
+<li>Output Files
+<li>Troubleshooting
+<li>License
+</ul>
 
 ## Requirements
 To successfully run these notebooks, you need to have Python 3.7 or above installed on your system.
