@@ -1,5 +1,7 @@
 # Paleo Crustal Thickness Estimation and Evolution Visualization
 
+The paleo-crustal thickness estimation and validation workflows from Zhou, J., Farahbakhsh, E., Williams, S., Li, X., Liu, Y., Li, S., & Müller, R. D. (2025). Machine learning and big data mining reveal Earth's deep time crustal thickness and tectonic evolution: A new chemical mohometry approach. Journal of Geophysical Research: Solid Earth, 130, e2024JB030404. https://doi.org/10.1029/2024JB030404.
+
 This repository contains two Jupyter notebooks designed to work with Paleo crustal thickness data. One script focuses on machine learning-based predictions of crustal thickness, and the other focuses on visualizing its spatial and temporal evolution.
 
 ## Table of Contents
